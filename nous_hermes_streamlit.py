@@ -1,12 +1,12 @@
 # Import necessary libraries
 import streamlit as st
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 
-# Load local model and tokenizer
-model_dir = "C:\\Users\\wesla\\Llama-2-13B-Nous-Hermes-vicuna-uncensored-mastermod-spych"
-model = AutoModel.from_pretrained(model_dir)
-tokenizer = AutoTokenizer.from_pretrained(model_dir)
+# Load model and tokenizer from Hugging Face Model Hub
+model_identifier = "wesley7137/Llama-2-13B-Nous-Hermes-vicuna-uncensored-mastermod-spych" # replace this with the correct model identifier
+model = AutoModelForSeq2SeqLM.from_pretrained(model_identifier)
+tokenizer = AutoTokenizer.from_pretrained(model_identifier)
 
 # Streamlit web UI
 st.title("Model Inference System")
